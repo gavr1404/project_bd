@@ -103,9 +103,6 @@ class MyHomePageState extends State<MyHomePage> {
                 backgroundColor: MaterialStatePropertyAll(Colors.blue[200]),
               ),
               onPressed: () async {
-                // try{ var myAge2 = int.parse(myAge.text);}
-                // var cath;
-                // cath;
                 if (myName.text != '' && myAge.text != '') {
                   FocusScope.of(context).requestFocus(FocusNode());
                   await DatabaseHelper.instance.insert({
@@ -169,7 +166,7 @@ class MyHomePageState extends State<MyHomePage> {
 
             if (markResult)
               Container(
-                  height: 130,
+                  height: 180,
                   color: Colors.blue[50],
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: ListView.builder(
