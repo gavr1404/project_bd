@@ -165,23 +165,25 @@ class MyHomePageState extends State<MyHomePage> {
             ),
 
             if (markResult)
-              Container(
-                  height: 180,
-                  color: Colors.blue[50],
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: ListView.builder(
-                      padding: const EdgeInsets.all(10),
-                      itemCount: result.length,
-                      itemBuilder: (BuildContext context, int index) {
-                        var myList =
-                            result[index].entries.map((e) => e.value).toList();
-                        var id = myList[0];
-                        var name = myList[1];
-                        var age = myList[2];
+              Expanded(
+                child: ListView.builder(
+                    padding: const EdgeInsets.all(10),
+                    itemCount: result.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      var myList =
+                          result[index].entries.map((e) => e.value).toList();
+                      var id = myList[0];
+                      var name = myList[1];
+                      var age = myList[2];
 
-                        return Text(
-                            '$id)  name - $name, age - $age\n${'-' * 50}');
-                      })),
+                      return Card(
+                        color: Colors.blue[200],
+                        child: ListTile(
+                          title: Text('$id)  name - $name, age - $age'),
+                        ),
+                      );
+                    }),
+              ),
           ],
         ),
       ),
